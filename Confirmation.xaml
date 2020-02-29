@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Woc"
+             mc:Ignorable="d"
+             x:Class="Woc.Confirmation">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0"  HasShadow="True" CornerRadius="40" Margin="20,100,20,0" Padding="0" HeightRequest="200" VerticalOptions="Start" BackgroundColor="Orange">
+                <StackLayout>
+                    <Label Text="Address" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Margin="0,10,0,0" HorizontalOptions="Center"/>
+                    <Label x:Name="globalAddress" Text="" TextColor="Black" FontSize="Medium" LineBreakMode="TailTruncation" Margin="20,25,20,0" HorizontalOptions="Center"/>
+                    <Label x:Name="globalShipAddress" Text="" TextColor="Black" FontSize="Medium" LineBreakMode="TailTruncation" Margin="20,0,20,0" HorizontalOptions="Center"/>
+                    <Label Text="Add New Address" TextColor="OrangeRed" FontSize="Medium"  Margin="0,20,0,0" HorizontalOptions="Center" VerticalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="newAddress"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
+
+            <!--<Frame Grid.Row="1"  HasShadow="True" CornerRadius="10" Margin="20,20,20,0" Padding="0" HeightRequest="180" VerticalOptions="Start" BackgroundColor="Black">
+                    <Grid HorizontalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                 
+                    <Label Grid.Row="0" Text="Payment Details" TextColor="White" FontSize="25" FontAttributes="Bold" Margin="0,10,0,0" HorizontalOptions="Center"/>
+                        <StackLayout Grid.Row="1">
+                            <Grid HorizontalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                                <Image x:Name="cImage" Source="" Grid.Column="0"/>
+                                <Label x:Name="cNumber" Text="" TextColor="White" FontSize="Medium" Margin="0,20,0,0" Grid.Column="1"/>
+                                <Label x:Name="cName" Text="" TextColor="Gray" FontSize="Medium" Margin="2,40,0,0" Grid.Column="1"/>
+                        </Grid>
+                        </StackLayout>
+                        <Label Grid.Row="2" Text="Add New Payment Method" TextColor="DeepSkyBlue" FontSize="Small"  Margin="0,0,0,20" HorizontalOptions="Center" VerticalOptions="End">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="newPaymentDetails"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </Frame>-->
+            <ActivityIndicator Grid.Row="1" x:Name="loading" IsRunning="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Color="Black"></ActivityIndicator>
+
+            <Frame Grid.Row="2"  HasShadow="True" CornerRadius="40" Margin="20,10,20,0" Padding="0" HeightRequest="225" VerticalOptions="Start" BackgroundColor="Orange">
+                <Grid HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Order Summary" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,10,0,0" HorizontalOptions="Center"/>
+                    <StackLayout Grid.Row="1">
+                        <Grid HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Margin="40,10,0,0" Text="Quantity" TextColor="Black" FontSize="Medium"/>
+                            <Label x:Name="label1" Grid.Row="0" Grid.Column="1" Margin="0,10,40,0" Text="12" TextColor="Black" FontSize="Medium" HorizontalOptions="End"/>
+                            <Label Grid.Row="1" Grid.Column="0" Margin="40,10,0,0" Text="Price / Piece" TextColor="Black" FontSize="Medium"/>
+                            <Label x:Name="label2" Grid.Row="1" Grid.Column="1" Margin="0,10,40,0" Text="12" TextColor="Black" FontSize="Medium" HorizontalOptions="End"/>
+                            <Label Grid.Row="2" Grid.Column="0" Margin="40,10,0,0" Text="Shipping Cost" TextColor="Black" FontSize="Medium"/>
+                            <Label x:Name="label3" Grid.Row="2" Grid.Column="1" Margin="0,10,40,0" Text="50" TextColor="Black" FontSize="Medium" HorizontalOptions="End"/>
+                            <Label Grid.Row="3" Grid.Column="0" Margin="40,10,0,0" Text="Total Amount" TextColor="Black" FontSize="Medium"/>
+                            <Label x:Name="label4" Grid.Row="3" Grid.Column="1" Margin="0,10,40,0" Text="12" TextColor="Black" FontSize="Medium" HorizontalOptions="End"/>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <local:RoundedButton Grid.Row="3" Text="Confirm" FontSize="18" FontAttributes="Bold" TextColor="White" Margin="20,30,20,0" Clicked="confirmClick" BackgroundColor="Orange" CornerRadius="20"></local:RoundedButton>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

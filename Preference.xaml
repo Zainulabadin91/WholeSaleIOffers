@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Woc"
+             mc:Ignorable="d"
+             x:Class="Woc.Preference"
+             BackgroundImageSource="black">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="skip" TextColor="White" Text="SKIP " HorizontalOptions="End" Margin="0,0,19,0" Padding="0,7,0,0" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Labtab"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+
+                </Label>
+                <Label x:Name="line1" TextColor="White" Text="What are you sourcing" FontAttributes="Bold" FontSize="Large" Padding="13,10,0,0">
+
+
+
+                </Label>
+                <Label x:Name="line2" TextColor="White" Text="It will help you to connect with the right supplies and products.You can change this later on 'My preference'." Padding="14,0,0,0"     ></Label>
+
+                <Grid Margin="0" >
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="120"></RowDefinition >
+                        <RowDefinition Height="120"></RowDefinition>
+                        <RowDefinition Height="120"></RowDefinition>
+                        <RowDefinition Height="120"></RowDefinition>
+                        <RowDefinition Height="120"></RowDefinition>
+
+
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <Frame Grid.Row="0" Grid.Column="0" VerticalOptions="Center"  HasShadow="True"  x:Name="pop" HeightRequest="50"  Margin="7,0,0,0"  >
+
+
+                        <Frame.GestureRecognizers  >
+                            <TapGestureRecognizer  Tapped="Button1" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                        <CheckBox x:Name="check1"  Grid.Column="0" Grid.Row="0" Margin="105,-42,0,0" VerticalOptions="Center" MinimumHeightRequest="-1"   HorizontalOptions="End"/>
+                    </Frame>
+
+                    <Frame Grid.Row="0" Grid.Column="1" HasShadow="True" BackgroundColor="White" VerticalOptions="Center" HeightRequest="50" Margin="0,0,7,0"  >
+                        <CheckBox Margin="105,-42,0,0" x:Name="check2" VerticalOptions="Center" HorizontalOptions="End"></CheckBox>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Button2"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="True" BackgroundColor="White" VerticalOptions="Center" HeightRequest="50"  Margin="7,-50,0,0">
+                        <Frame.GestureRecognizers  >
+                            <TapGestureRecognizer  Tapped="Button3" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+
+                        <CheckBox  Margin="105,-42,0,0" x:Name="check9" VerticalOptions="Center" HorizontalOptions="End"></CheckBox>
+                    </Frame>
+
+
+                    <Frame Grid.Row="1"  Margin="0,-50,7,0" Grid.Column="1" HasShadow="True" BackgroundColor="White" VerticalOptions="Center" HeightRequest="50"  >
+                        <CheckBox Margin="105,-42,0,0" x:Name="check4" VerticalOptions="Center" HorizontalOptions="End"></CheckBox>
+                        <Frame.GestureRecognizers  >
+                            <TapGestureRecognizer  Tapped="Button4" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Grid.Row="2"  Margin="7,-100,0,0" Grid.Column="0" HasShadow="True" BackgroundColor="White" VerticalOptions="Center" HeightRequest="50"  >
+                        <CheckBox Margin="105,-42,0,0" x:Name="check5" VerticalOptions="Center" HorizontalOptions="End"></CheckBox>
+                        <Frame.GestureRecognizers  >
+                            <TapGestureRecognizer  Tapped="Button5" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Grid.Row="2" Margin="0,-100,7,0" Grid.Column="1" HasShadow="True" BackgroundColor="White" VerticalOptions="Center" HeightRequest="50"  >
+                        <CheckBox Margin="105,-42,0,0" x:Name="check6" VerticalOptions="Center" Grid.Column="1" Grid.Row="2" HorizontalOptions="End"></CheckBox>
+                        <Frame.GestureRecognizers  >
+                            <TapGestureRecognizer  Tapped="Button6" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+
+
+                    <Label Text="Knife" TextColor="Black" Margin="20,30,0,0" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label Text="Leather" TextColor="Black" Margin="20,30,0,0" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label Text="Toys" TextColor="Black" Margin="20,10,0,0" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label Text="Stationery" TextColor="Black" Margin="20,10,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label Text="Automobile" TextColor="Black" Margin="20,-12,0,0" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label Text="Sportswear" TextColor="Black" Margin="20,-12,0,0" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+
+                    <Image Source="a" VerticalOptions="End" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Margin="20,-10,0,15">
+
+                    </Image>
+                    <Image Source="b" VerticalOptions="End" HorizontalOptions="Start" Grid.Column="1" Grid.Row="0" Margin="20,0,5,15" >
+
+                    </Image>
+                    <Image Source="c" VerticalOptions="End" HorizontalOptions="Start" Grid.Column="0" Grid.Row="1" Margin="20,0,0,40" >
+
+                    </Image>
+                    <Image Source="d" VerticalOptions="End" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1" Margin="20,0,6,40" >
+
+                    </Image>
+                    <Image Source="e" VerticalOptions="End" HorizontalOptions="Start" Grid.Column="0" Grid.Row="2" Margin="20,0,7,66" >
+
+                    </Image>
+                    <Image Source="f" VerticalOptions="End" HorizontalOptions="Start" Grid.Column="1" Grid.Row="2" Margin="20,0,8,66" IsTabStop="False" >
+
+                    </Image>
+
+
+                </Grid>
+
+                <ActivityIndicator x:Name="loading" IsRunning="{Binding IsBusy}" Margin="0, -230, 0, 0" HorizontalOptions="Center" Color="White"></ActivityIndicator>
+                <local:RoundedButton x:Name="btn" Text="Done"  BackgroundColor="DeepSkyBlue" Margin="110, 0, 110, 0" FontSize="Large" Clicked ="Button_Clicked_1" TextColor="White"></local:RoundedButton>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

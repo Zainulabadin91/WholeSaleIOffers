@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Woc"
+             mc:Ignorable="d"
+             x:Class="Woc.Address"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10, 0, 10, 0">
+                <Label Text="Billing" FontSize="20" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start" Margin="10, 10, 0, 0"/>
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <local:RoundedEntry  Grid.Column="0" x:Name="fname" Placeholder="First Name" Margin="0, 20, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium"></local:RoundedEntry>
+                    <local:RoundedEntry  Grid.Column="1" x:Name="lname" Placeholder="Last Name" Margin="0, 20, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium"></local:RoundedEntry>
+            </Grid>
+
+                <local:RoundedEntry x:Name="email" Placeholder="Email" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="White" FontSize="Medium"></local:RoundedEntry>
+                <local:RoundedEntry x:Name="phone" Placeholder="Phone Number" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="White" FontSize="Medium"></local:RoundedEntry>
+                <local:RoundedEntry x:Name="address1" Placeholder="Address 1" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="White" FontSize="Medium"></local:RoundedEntry>
+                <local:RoundedEntry x:Name="address2" Placeholder="Address 2 (Optional)" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium"></local:RoundedEntry>
+                <local:RoundedEntry x:Name="company" Placeholder="Company" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium"></local:RoundedEntry>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="0" x:Name="country" Placeholder="Country" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium"></local:RoundedEntry>
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="1" x:Name="city" Placeholder="City" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium"></local:RoundedEntry>
+                    <local:RoundedEntry Grid.Row="1" Grid.Column="0" x:Name="province" Placeholder="State / Province" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium"></local:RoundedEntry>
+                    <local:RoundedEntry Grid.Row="1" Grid.Column="1" x:Name="zipCode" Placeholder="Zip Code" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                        <Entry.Behaviors>
+                            <local:NumericValidationBehavior />
+                        </Entry.Behaviors>
+                    </local:RoundedEntry>
+                </Grid>
+                
+                
+                <Label Text="Shipping" FontSize="20" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start" Margin="10, 10, 0, 0"/>
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="ship_check" Grid.Column="0" Grid.Row="0">
+                    </CheckBox>
+                    <Label Text="My shipping address is same as my billing address" TextColor="Black" FontSize="Small" Grid.Column="1" Grid.Row="0" Margin="0,5,0,0"></Label>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="0" x:Name="ship_fname" Placeholder="First Name" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                        <local:RoundedEntry.Triggers>
+                            <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                                <Setter Property="IsVisible"
+                    Value="False"/>
+                            </DataTrigger>
+                        </local:RoundedEntry.Triggers>
+                    </local:RoundedEntry>
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="1" x:Name="ship_lname" Placeholder="Last Name" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                        <local:RoundedEntry.Triggers>
+                            <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                                <Setter Property="IsVisible"
+                    Value="False"/>
+                            </DataTrigger>
+                        </local:RoundedEntry.Triggers>
+                    </local:RoundedEntry>
+                </Grid>
+                <local:RoundedEntry x:Name="ship_address1" Placeholder="Address 1" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                    <local:RoundedEntry.Triggers>
+                        <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                            <Setter Property="IsVisible"
+                    Value="False"/>
+                        </DataTrigger>
+                    </local:RoundedEntry.Triggers>
+                </local:RoundedEntry>
+                <local:RoundedEntry x:Name="ship_address2" Placeholder="Address 2 (Optional)" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                    <local:RoundedEntry.Triggers>
+                        <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                            <Setter Property="IsVisible"
+                    Value="False"/>
+                        </DataTrigger>
+                    </local:RoundedEntry.Triggers>
+                </local:RoundedEntry>
+                <local:RoundedEntry x:Name="ship_company" Placeholder="Company" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black">
+                    <local:RoundedEntry.Triggers>
+                        <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                            <Setter Property="IsVisible"
+                    Value="False"/>
+                        </DataTrigger>
+                    </local:RoundedEntry.Triggers>
+                </local:RoundedEntry>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="0" x:Name="ship_country" Placeholder="Country" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                        <local:RoundedEntry.Triggers>
+                            <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                                <Setter Property="IsVisible"
+                    Value="False"/>
+                            </DataTrigger>
+                        </local:RoundedEntry.Triggers>
+                    </local:RoundedEntry>
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="1" x:Name="ship_city" Placeholder="City" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                        <local:RoundedEntry.Triggers>
+                            <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                                <Setter Property="IsVisible"
+                    Value="False"/>
+                            </DataTrigger>
+                        </local:RoundedEntry.Triggers>
+                    </local:RoundedEntry>
+                    <local:RoundedEntry Grid.Row="1" Grid.Column="0" x:Name="ship_province" Placeholder="State / Province" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                        <local:RoundedEntry.Triggers>
+                            <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                                <Setter Property="IsVisible"
+                    Value="False"/>
+                            </DataTrigger>
+                        </local:RoundedEntry.Triggers>
+                    </local:RoundedEntry>
+                    <local:RoundedEntry Grid.Row="1" Grid.Column="1" x:Name="ship_zipCode" Placeholder="Zip Code" Margin="0, 10, 0, 0" PlaceholderColor="Black" TextColor="Black" FontSize="Medium">
+                        <Entry.Behaviors>
+                            <local:NumericValidationBehavior />
+                        </Entry.Behaviors>
+                        <local:RoundedEntry.Triggers>
+                            <DataTrigger TargetType="Entry" Binding="{Binding Source={x:Reference ship_check}, Path=IsChecked}"
+                     Value="true">
+                                <Setter Property="IsVisible"
+                    Value="False"/>
+                            </DataTrigger>
+                        </local:RoundedEntry.Triggers>
+                    </local:RoundedEntry>
+                </Grid>
+                <local:RoundedButton Grid.Row="3" Text="Save" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="20,40,20,10" Clicked="saveAddress" BackgroundColor="Orange"></local:RoundedButton>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Woc"
+             x:Class="Woc.MainPage" BackgroundImageSource="coolco.png">
+
+
+    <ScrollView>
+        <StackLayout Margin="30, 190, 10, 0">
+
+            <!-- Place new controls here -->
+            <Label Text="LOGIN"  HorizontalOptions="Center"
+               Margin="0, 0, 0, 30"
+               FontSize="Subtitle"  TextColor="Gray" FontAttributes="Bold">
+
+            </Label>
+
+            <local:RoundedEntry x:Name="emailID" Placeholder="Email" Margin="0,0,20,30" PlaceholderColor="Gray" TextColor="Gray" FontSize="Small"></local:RoundedEntry>
+            <local:RoundedEntry x:Name="pass" Placeholder="Password" Margin="0, 0, 20, 0" IsPassword="True" PlaceholderColor="Gray" TextColor="Gray" FontSize="Small"></local:RoundedEntry>
+            <!--<ActivityIndicator x:Name="loading" IsRunning="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Color="White"></ActivityIndicator>-->
+            <Label Text="Forgot Password?" HorizontalOptions="EndAndExpand" Margin="20, 0, 20, 80" TextColor="Red"></Label>
+            <local:RoundedButton Text="Login" Margin="80, 0, 80, 40" FontSize="Medium" Clicked="Button_Clicked" BackgroundColor="#FA6400" TextColor="Black"></local:RoundedButton>
+            <Grid>
+
+
+                <Label Text="Don't have an Account?" Margin="58,10,2,80">
+
+                </Label>
+                <Label  Text="Sign Up" TextColor="Red" HorizontalOptions="Center"
+               Margin="180,7,20,0"
+               FontSize="Small" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="lblClick"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

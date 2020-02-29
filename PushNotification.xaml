@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Woc"
+             x:Class="Woc.PushNotification"
+             BackgroundImageSource="background.png">
+
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid ColumnSpacing="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image x:Name="imageURL" Source="Knife.jpg" Margin="40, 0, 40, 0" Grid.Row="1" BackgroundColor="Orange"  HorizontalOptions="CenterAndExpand">
+
+                </Image>
+                <Frame Grid.Row="2"  HasShadow="True" CornerRadius="50" BackgroundColor="Orange" Margin="20,0,20,0" Padding="0" HeightRequest="50" VerticalOptions="Start" AnchorX="0.5">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Image  Source="youtube" Grid.Row="1"   HorizontalOptions="StartAndExpand" Margin="50,0,0,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="youtubeClick"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="|" TextColor="Black" Grid.Row="1"  FontSize="30" HorizontalOptions="CenterAndExpand"></Label>
+                        <Image Source="share" Grid.Row="1"  HorizontalOptions="EndAndExpand" Margin="0,0,50,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="shareClick"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Frame>
+
+                <StackLayout Margin="20,56,20,0" Grid.Row="2" HeightRequest="-1">
+
+                    <Label x:Name="Label1" Text="ALMAZAN kitchen knife in hand forged Damascus Steel" TextColor="Black" FontAttributes="Bold"
+                   FontSize="Subtitle" HorizontalTextAlignment="Center" ></Label>
+
+                    <BoxView  Color="Black" HeightRequest="1" Margin="0,0,0,0"></BoxView>
+
+                    <Grid Margin="0,-10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label  Text="Description" TextColor="Black" FontSize="Subtitle" Margin="0,10,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="DesClick"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Image x:Name="Arrow" Source="rightArrow" Grid.Column="1" WidthRequest="20" Margin="0,12,0,0" BackgroundColor="Black">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="DesImage"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                    <StackLayout x:Name="Description" IsVisible="False" Margin="0">
+                        <Label x:Name="DesText" Text="Bushcraft style heavy blade for wilderness skills, chopping, hacking, tracking and hunting Blade Thickness The build is what you expect from a Rugged, Adventure seeking, Do it all. This knife does not disappoint."  TextColor="Black" FontSize="Subtitle"></Label>
+                    </StackLayout>
+
+                    <BoxView Color="Black" HeightRequest="1" Margin="0,0,0,0"></BoxView>
+
+
+                    <StackLayout HorizontalOptions="EndAndExpand" Margin="0,10,0,0">
+                        <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Minimum quantity=" HorizontalOptions="EndAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0" Margin="0,-8,0,0"/>
+                        <Label x:Name="minQty" Text="5" HorizontalOptions="EndAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1" Margin="0,-7,0,0"/>
+                    </Grid>
+                    </StackLayout>
+
+                    <Label Text="Offers" TextColor="Black" FontSize="Medium" Margin="0,-18,20,0"/>
+                    
+                    <Grid Margin="18,0,20,0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="1">
+
+                            <Image Source="unchecked" HeightRequest="15" BackgroundColor="GhostWhite" Margin="0"/>
+                            <Label Text="US $" TextColor="Black" FontSize="Medium" Margin="15,0,0,0"/>
+                            <Label x:Name="OPLbl" Text="50" TextColor="Black" FontSize="Medium" />
+                            <Label Text="/ Piece" TextColor="Black" FontSize="Medium" Margin="0,0,0,0" /> 
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="2">
+
+                            <Image Source="unchecked" HeightRequest="15" BackgroundColor="GhostWhite"/>
+                            <Label Text="US $" TextColor="Black" FontSize="Medium" Margin="15,0,0,0"/>
+                            <Label x:Name="OPLbl1" Text="47" TextColor="Black" FontSize="Medium"/>
+                            <Label Text="/ Piece (QTY >" TextColor="Black" FontSize="Medium" Margin="0,0,0,0"/>
+                            <Label x:Name="OQLbl1" Text="20" TextColor="Black" FontSize="Medium"/>
+                            <Label Text=")" TextColor="Black" FontSize="Medium" Margin="0,0,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="3">
+
+                            <Image Source="unchecked" HeightRequest="15" BackgroundColor="GhostWhite"/>
+                            <Label Text="US $" TextColor="Black" FontSize="Medium" Margin="15,0,0,0"/>
+                            <Label x:Name="OPLbl2" Text="44" TextColor="Black" FontSize="Medium"/>
+                            <Label Text="/ Piece (QTY >" TextColor="Black" FontSize="Medium" Margin="0,0,0,0"/>
+                            <Label x:Name="OQLbl2" Text="50" TextColor="Black" FontSize="Medium"/>
+                            <Label Text=")" TextColor="Black" FontSize="Medium" Margin="0,0,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="4">
+
+                            <Image Source="unchecked" HeightRequest="15" BackgroundColor="GhostWhite"/>
+                            <Label Text="US $" TextColor="Black" FontSize="Medium" Margin="15,0,0,0"/>
+                            <Label x:Name="OPLbl3" Text="40" TextColor="Black" FontSize="Medium"/>
+                            <Label Text="/ Piece (QTY >" TextColor="Black" FontSize="Medium" Margin="0,0,0,0"/>
+                            <Label x:Name="OQLbl3" Text="100" TextColor="Black" FontSize="Medium"/>
+                            <Label Text=")" TextColor="Black" FontSize="Medium" Margin="0,0,0,0"/>
+                        </StackLayout>
+                    </Grid>
+                    <BoxView Color="Black" HeightRequest="1" Margin="0,0,0,0"></BoxView>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Quatity" TextColor="Black" FontSize="Subtitle" Margin="0,30,0,0"/>
+                        <local:RoundedEntry x:Name="quantity" BindingContext="{x:Reference stepperCounter}" Text="{Binding Value}" Grid.Column="1" TextColor="Black" Margin="10,10,10,0">
+                            <Entry.Behaviors>
+                                <local:NumericValidationBehavior/>
+                            </Entry.Behaviors>
+                        </local:RoundedEntry>
+                        <Stepper x:Name="stepperCounter" Increment="1" Grid.Column="2" Margin="0,20,20,0" HorizontalOptions="EndAndExpand" Maximum="999999" />
+                    </Grid>
+
+                    <BoxView Color="Black" HeightRequest="1" Margin="0,0,0,0"></BoxView>
+
+                    <Grid Margin="25,10,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+
+                        </Grid.RowDefinitions>
+                        <Image Source="thumbsUp.png" Grid.Row="0" Grid.Column="1" Margin="0,0,0,0" HorizontalOptions="StartAndExpand">
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ImgClickU"/>
+                            </Image.GestureRecognizers>
+
+
+                        </Image>
+                        <Image Source="thumbsDown.png" Grid.Column ="2" Grid.Row="0" Margin="0,0,20,0" HorizontalOptions="EndAndExpand">
+
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ImgClickD"/>
+                            </Image.GestureRecognizers>
+
+                        </Image>
+                    </Grid>
+                    <local:RoundedButton Grid.Row="3" Text="Buy" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="0,40,0,10" Clicked="buyClick"></local:RoundedButton>
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

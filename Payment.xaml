@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Woc"
+             x:Class="Woc.Payment"
+             BackgroundImageSource="black.jpg">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10, 0, 10, 10">
+
+                <Grid Margin="0, 50, 10, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="0" Margin="10,0,0,0">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="masterButtonTapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="unchecked" HeightRequest="25" x:Name="card"/>
+                        <Image Source="mastercard" WidthRequest="100" HeightRequest="90" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" Margin="60,0,0,0">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="visaButtonTapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="unchecked" HeightRequest="25" x:Name="card1"/>
+                        <Image Source="visa" WidthRequest="100" HeightRequest="90"/>
+                    </StackLayout>
+ 
+                </Grid>
+
+                <local:RoundedEntry x:Name="cardNumber" Placeholder="Card Number" Margin="0, 10, 0, 0" PlaceholderColor="White" TextColor="White" MaxLength="19">
+                    <Entry.Behaviors>
+                        <local:NumericValidationBehavior/>
+                    </Entry.Behaviors>
+                </local:RoundedEntry>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="260" />
+                        <ColumnDefinition Width="120" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <local:RoundedEntry x:Name="expireDate" Placeholder="Expiry ( MM/YY )" Margin="0, 10, 0, 0" PlaceholderColor="White" TextColor="White" Grid.Column="0" Grid.Row="0" MaxLength="7">
+                        
+                    </local:RoundedEntry>
+                    <local:RoundedEntry x:Name="cvv" Placeholder="CVV" Margin="20, 10, 0, 0" PlaceholderColor="White" TextColor="White" Grid.Column="1" Grid.Row="0" MaxLength="3"></local:RoundedEntry>
+                </Grid>
+
+                <local:RoundedEntry x:Name="cardholder" Placeholder="Cardholder Name" Margin="0, 10, 0, 0" PlaceholderColor="White" TextColor="White" MaxLength="50"></local:RoundedEntry>
+                
+                
+                <local:RoundedButton Text="Save" FontSize="18" FontAttributes="Bold" Margin="20,50,20,0" TextColor="White" Clicked="PaymentSave"></local:RoundedButton>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

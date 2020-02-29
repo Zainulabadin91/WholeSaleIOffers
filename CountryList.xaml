@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>  
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Woc"
+             x:Class="Woc.CountryList"
+             >
+
+
+    <StackLayout BackgroundColor="White" >
+        <SearchBar x:Name="searchCountry" TextChanged="searchCountry_TextChanged" ></SearchBar>
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                    <TextCell TextColor="Black" Text="{Binding .}" ></TextCell>
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+                
+            </ListView>
+        <local:RoundedButton Text="Close" Margin="110, 0, 110, 0" BackgroundColor="DeepSkyBlue" TextColor="white" FontSize="Large" Clicked="OnClose"></local:RoundedButton>
+    </StackLayout>
+
+</pages:PopupPage>

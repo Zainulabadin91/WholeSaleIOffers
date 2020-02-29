@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Woc"
+             mc:Ignorable="d"
+             x:Class="Woc.Meeting"
+             BackgroundImageSource="black">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Set Your Meeting Schedule" HorizontalOptions="Center" TextColor="White" FontSize="25" FontAttributes="Bold" Margin="0,25,0,0"></Label>
+            <Label Text="Date :" TextColor="White" FontSize="Large" Margin="10, 100, 10, 0"></Label>
+            <DatePicker x:Name="datep" Margin="10, 0, 10, 0" TextColor="White" FontSize="Large"></DatePicker>
+            <Label Text="From :" TextColor="White" FontSize="Large" Margin="10, 10, 10, 0"></Label>
+            <TimePicker x:Name="fromtime" TextColor="White" FontSize="Large" Margin="10, 0, 10, 0" ></TimePicker>
+            <Label Text="To :" TextColor="White" FontSize="Large" Margin="10, 10, 10, 0"></Label>
+            <TimePicker x:Name="totime" Margin="10, 0, 10, 0" TextColor="White" FontSize="Large" ></TimePicker>
+           
+
+            <local:RoundedButton  Text="SET MEETING" Clicked="Button_Clicked" BackgroundColor="DeepSkyBlue" TextColor="white" FontSize="Large" Margin="110, 30, 110, 0"></local:RoundedButton>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

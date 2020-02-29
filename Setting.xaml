@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Woc"
+             x:Class="Woc.Setting"
+             BackgroundImageSource="black.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HasShadow="True" CornerRadius="20" Margin="20,150,20,0" Padding="0" HeightRequest="50" VerticalOptions="Start">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="resetPsw.png" Margin="30,0,0,0" Grid.Column="0"></Image>
+                    <Label Text="Change Password" TextColor="Black" Grid.Column="1" Margin="15,15,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="passwordClick"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Image Source="rightArrowBlack" Grid.Column="2" Margin="0,10,30,10" HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="passwordImage"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Frame>
+
+            <Frame HasShadow="True" CornerRadius="20" Margin="20,20,20,0" Padding="0" HeightRequest="50" VerticalOptions="Start">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="address.png" Margin="30,0,0,0" Grid.Column="0"></Image>
+                    <Label Text="Address Details" TextColor="Black" Grid.Column="1" Margin="15,15,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="addressClick"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Image Source="rightArrowBlack" Grid.Column="2" Margin="0,10,30,10" HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="addressImage"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Frame>
+
+            <Frame HasShadow="True" CornerRadius="20" Margin="20,20,20,0" Padding="0" HeightRequest="50" VerticalOptions="Start">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="category.png" Margin="30,0,0,0" Grid.Column="0">
+                       
+                    </Image>
+                    <Label Text="My Preferences" TextColor="Black" Grid.Column="1" Margin="15,15,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="categoryClick"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Image Source="rightArrowBlack" Grid.Column="2" Margin="0,10,30,10" HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="categoryImage"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
